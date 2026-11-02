@@ -1,0 +1,20 @@
+name = "diyagpt-api"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = true
+preview_urls = false
+
+# AZURE_BASE, AZURE_KEY and PEPPER are secrets (wrangler secret put), never committed.
+[vars]
+ALLOWED_ORIGINS = "https://divyambanga.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "diyagpt"
+database_id = "df1d6ce6-14e0-4bb2-a7c5-ac16ffbb3b78"
+
+[triggers]
+crons = ["17 8 * * *"]
+
+[observability]
+enabled = true
